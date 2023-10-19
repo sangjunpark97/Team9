@@ -8,7 +8,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Clone Test
-        //좌민석
+
+        //좌민석commit
 
         setContentView(R.layout.activity_main)
     }
