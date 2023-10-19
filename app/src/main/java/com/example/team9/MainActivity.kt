@@ -9,7 +9,8 @@ class MainActivity : AppCompatActivity() {
 
         // Clone Test
 
-        //좌민석commit
+        //좌민석commit 확인
+        //박상준commit 확인
 
         setContentView(R.layout.activity_main)
     }
