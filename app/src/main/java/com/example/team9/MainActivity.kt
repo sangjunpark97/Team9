@@ -8,7 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Test
-
+        //d이동건
         setContentView(R.layout.activity_main)
     }
 }
