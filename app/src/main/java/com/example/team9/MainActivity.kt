@@ -7,7 +7,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Test 추가 확인 ㅇㄴㄹㅇㄴㄹ
+        // Clone Test
 
         setContentView(R.layout.activity_main)
     }
