@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         // Test
 
         //eeasdasd
+        // zzzzzzzzzzzzzzzzz
         setContentView(R.layout.activity_main)
     }
 }
