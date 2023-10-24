@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         // dfsd
         // test123
 
-        //ㄴㅇㄹㄴㅇㄹ
+        //sdfsfsdfadsf
 
         setContentView(R.layout.activity_main)
     }
