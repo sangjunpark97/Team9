@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         // test123
 
         //ㄴㅇㄹㄴㅇㄹㅂㅈㄷㅂㅈㄷ
-        //swerw
 
         setContentView(R.layout.activity_main)
     }
