@@ -8,6 +8,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //sdfdsdf
+        // dfsd
+        // test123
+
+        //ㄴㅇㄹㄴㅇㄹ
 
         setContentView(R.layout.activity_main)
     }
