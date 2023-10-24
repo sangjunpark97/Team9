@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
         //sdfdsdf
         // dfsd
 
+        //ㄴㅇㄹㄴㅇㄹ
+
         setContentView(R.layout.activity_main)
     }
 }
