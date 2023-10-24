@@ -8,6 +8,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Stash
+        // ㅇㄴㄹㅇㄹㄴ
 
         setContentView(R.layout.activity_main)
     }
