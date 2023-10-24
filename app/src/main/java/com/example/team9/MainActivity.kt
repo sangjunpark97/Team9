@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
 
         //sdfdsdf
         // dfsd
+        // test
 
         setContentView(R.layout.activity_main)
     }
