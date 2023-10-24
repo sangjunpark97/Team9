@@ -7,7 +7,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Stash
+        //sdfdsdf
+        // dfsd
 
         setContentView(R.layout.activity_main)
     }
