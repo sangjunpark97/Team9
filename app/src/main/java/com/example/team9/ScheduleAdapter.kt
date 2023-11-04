@@ -21,8 +21,7 @@ class ScheduleAdapter() : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
     override fun getItemCount(): Int = 10
 
     inner class Holder(val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
-//        val textTime: TextView = itemView.findViewById(R.id.textTime)
-//        val textCourse: TextView = itemView.findViewById(R.id.textCourse)
+
     }
 
 
