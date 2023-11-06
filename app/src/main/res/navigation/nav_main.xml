@@ -7,16 +7,16 @@
     <fragment
         android:id="@+id/todoListFragment"
         android:name="com.example.team9.TodoListFragment"
-        android:label="fragment_todo_list"
+        android:label="TO-DO"
         tools:layout="@layout/fragment_todo_list" />
     <fragment
         android:id="@+id/gradeFragment"
         android:name="com.example.team9.GradeFragment"
-        android:label="fragment_grade"
+        android:label="학점 계산기"
         tools:layout="@layout/fragment_grade" />
     <fragment
         android:id="@+id/scheduleFragment"
         android:name="com.example.team9.ScheduleFragment"
-        android:label="fragment_schedule"
+        android:label="시간표"
         tools:layout="@layout/fragment_schedule" />
 </navigation>
