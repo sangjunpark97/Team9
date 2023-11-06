@@ -9,8 +9,12 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.FragmentScheduleBinding
 import com.example.team9.databinding.ScheduleItemBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 
 class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
+
+    var onItemClick: ((position: Int) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ScheduleItemBinding.inflate(LayoutInflater.from(parent.context))
         return Holder(binding)
@@ -24,7 +28,7 @@ class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
 
 
 
-     class Holder(private val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
+      class Holder(private val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
          fun bind(schedule: Schedule) {
 
              binding.time.text = schedule.time
@@ -38,17 +42,14 @@ class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
 
 
              binding.root.setOnClickListener{
-                 val bottomSheetFragment = BottomSheetFragment()
 
-
-
-//                 val builder = AlertDialog.Builder(binding.root.context)
-//                 builder.setMessage("시간표 추가 작업") // 원하는 메시지로 변경
-//                 builder.setPositiveButton("확인") { dialog, _ ->
-//                     dialog.dismiss()
-//                 }
-//                 val dialog = builder.create()
-//                 dialog.show()
+                 val builder = AlertDialog.Builder(binding.root.context)
+                 builder.setMessage("시간표 추가 작업") // 원하는 메시지로 변경
+                 builder.setPositiveButton("확인") { dialog, _ ->
+                     dialog.dismiss()
+                 }
+                 val dialog = builder.create()
+                 dialog.show()
              }
          }
     }

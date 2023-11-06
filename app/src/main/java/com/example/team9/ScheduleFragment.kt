@@ -44,7 +44,6 @@ class ScheduleFragment() : Fragment() {
         val binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(requireContext())
         binding.recSchedule.adapter = ScheduleAdapter(schedule)
-
         return binding.root
     }
 
