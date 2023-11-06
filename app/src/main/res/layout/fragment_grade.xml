@@ -8,22 +8,10 @@
     tools:context=".GradeFragment">
 
     <EditText
-        android:id="@+id/mainText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="학점계산기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="36dp" />
-
-    <EditText
         android:id="@+id/cheerText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="text"
         android:text="나에게 응원 메시지를 작성해보세요!"
@@ -33,25 +21,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="140dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -62,7 +37,7 @@
         android:id="@+id/moreButton"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="184dp"
         android:text="자세히"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
@@ -73,8 +48,28 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar4"
+        android:layout_width="324dp"
+        android:layout_height="19dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="311dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
