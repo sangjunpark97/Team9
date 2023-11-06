@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         fun replaceFragment(frag: Fragment) {
             supportFragmentManager.beginTransaction().let {
-                it.replace(binding.frmFragment.id, Fragment())
+                it.replace(binding.recSchedule.id, Fragment())
                 it.commit()
             }
         }
