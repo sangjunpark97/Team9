@@ -16,12 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         fun replaceFragment(frag: Fragment) {
             supportFragmentManager.beginTransaction().let {
-                it.replace(binding.frmFragment.id, frag)
+                it.replace(binding.frmFragment.id, Fragment())
                 it.commit()
             }
         }
 
+
         replaceFragment(TodoListFragment())
+
 
 
 
