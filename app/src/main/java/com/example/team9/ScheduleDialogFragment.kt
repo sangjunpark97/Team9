@@ -1,5 +1,6 @@
 package com.example.team9
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,9 +18,15 @@ class ScheduleDialogFragment : DialogFragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.fragment_dialog)
 
+        val width = 1050
+        val height = 1000
+        dialog.window?.setLayout(width, height)
+
+        return dialog
     }
 
     override fun onCreateView(
@@ -27,6 +34,7 @@ class ScheduleDialogFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentDialogBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 

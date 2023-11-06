@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentManager
 
 class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
 
-    var onItemClick: ((position: Int) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ScheduleItemBinding.inflate(LayoutInflater.from(parent.context))
         return Holder(binding)
@@ -44,7 +44,7 @@ class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
              binding.root.setOnClickListener{
 
                  val builder = AlertDialog.Builder(binding.root.context)
-                 builder.setMessage("시간표 추가 작업") // 원하는 메시지로 변경
+                 builder.setMessage("to do list 연동")
                  builder.setPositiveButton("확인") { dialog, _ ->
                      dialog.dismiss()
                  }

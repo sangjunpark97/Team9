@@ -47,7 +47,7 @@ class ScheduleFragment() : Fragment() {
 
         binding.ActionBtn.setOnClickListener{
             val bottomSheetFragment = BottomSheetFragment()
-            bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
+            bottomSheetFragment.show(childFragmentManager, "bottomFrag")
         }
         return binding.root
     }
