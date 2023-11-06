@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BottomSheetFragment" >
+    android:layout_height="wrap_content"
+    tools:context=".BottomSheetFragment">
 
     <EditText
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:hint="제목: "
         android:textColor="#000000"
         android:textColorHint="#9F9C9C"
@@ -21,8 +22,9 @@
 
     <EditText
         android:id="@+id/textView3"
-        android:layout_width="200dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:hint="장소: "
         android:textColor="#000000"
         android:textColorHint="#9F9C9C"
@@ -33,8 +35,9 @@
 
     <EditText
         android:id="@+id/textView8"
-        android:layout_width="200dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:hint="이름: "
         android:textColor="#000000"
         android:textColorHint="#9F9C9C"
@@ -42,4 +45,31 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/time_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/clock"
+        android:contentDescription="시간 작성 화면"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:text="시간을 입력하세요"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/time_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.team9
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +27,10 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentBottomSheetBinding.inflate(inflater,container,false)
 
+        binding.timeBtn.setOnClickListener {
+            val scheduleDialogFragment = ScheduleDialogFragment()
+            scheduleDialogFragment.show(childFragmentManager,"hello")
+        }
         return binding.root
     }
 
