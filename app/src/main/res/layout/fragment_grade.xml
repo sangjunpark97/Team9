@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".GradeFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="588dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/moreButton"
         android:layout_width="fill_parent"
@@ -44,19 +55,22 @@
                 android:id="@+id/seekBar6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
 
             <SeekBar
                 android:id="@+id/seekBar7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
 
             <SeekBar
                 android:id="@+id/seekBar8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
 
         </LinearLayout>
 
@@ -101,19 +115,22 @@
                 android:id="@+id/seekBar9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
 
             <SeekBar
                 android:id="@+id/seekBar10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
 
             <SeekBar
                 android:id="@+id/seekBar11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:clickable="false" />
         </LinearLayout>
 
         <LinearLayout
