@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.TodoitemBinding
 
 class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.ViewHolder>(){
-    private val testArray: MutableList<String> = mutableListOf("test1","test2","test3","test4","test5","test6")
+    private val testArray: List<String> = listOf("test1","test2","test3","test4","test5","test6")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodolistAdapter.ViewHolder {
         return ViewHolder(
             // ItemReviewPhotoBinding 클래스로 만들어지는 binding 인스턴스를 사용하도록 변경
@@ -29,7 +29,7 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.ViewHolder>(){
             binding.checkBox.text = item
             binding.checkBox.setOnCheckedChangeListener { a, b ->
                 if (a.isChecked) {
-                    Log.e("TodolistAdapter","$item 번을 체크하셨습니다.")
+
                 } else {
 
                 }
