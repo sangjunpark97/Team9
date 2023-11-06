@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 it.commit()
             }
         }
+
         replaceFragment(ScheduleFragment())
 
 

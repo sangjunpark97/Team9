@@ -2,75 +2,103 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
         android:background="@drawable/border"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
+        android:id="@+id/mon"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/time"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
+        android:id="@+id/tue"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/mon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
+        android:id="@+id/wed"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="51sp"
-        android:layout_height="wrap_content"
+        android:id="@+id/thu"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/wed"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/fri"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/thu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sat"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/fri"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sun"
+        android:layout_width="51dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/sat"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
