@@ -1,5 +1,6 @@
 package com.example.team9
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,20 @@ class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
              binding.sat.text = schedule.sat
              binding.sun.text = schedule.sun
 
+
+             binding.root.setOnClickListener{
+                 val bottomSheetFragment = BottomSheetFragment()
+
+
+
+//                 val builder = AlertDialog.Builder(binding.root.context)
+//                 builder.setMessage("시간표 추가 작업") // 원하는 메시지로 변경
+//                 builder.setPositiveButton("확인") { dialog, _ ->
+//                     dialog.dismiss()
+//                 }
+//                 val dialog = builder.create()
+//                 dialog.show()
+             }
          }
     }
 
