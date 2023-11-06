@@ -14,8 +14,24 @@ import com.example.team9.databinding.ScheduleItemBinding
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+class Schedule(val time:String, val mon: String, val tue: String, val wed: String, val thu:String, val fri: String,
+               val sat: String, val sun: String)
+
 
 class ScheduleFragment() : Fragment() {
+
+    val schedule = arrayOf(
+        Schedule(" ","월" ,"화","수","목","금","토","일") ,
+        Schedule("9:00"," " ," "," "," "," "," "," ") ,
+        Schedule("10:00"," " ," "," "," "," "," "," ") ,
+        Schedule("11:00"," " ," "," "," "," "," "," ") ,
+        Schedule("12:00"," " ," "," "," "," "," "," ") ,
+        Schedule("13:00"," " ," "," "," "," "," "," ") ,
+        Schedule("14:00"," " ," "," "," "," "," "," ") ,
+        Schedule("15:00"," " ," "," "," "," "," "," ") ,
+        Schedule("16:00"," " ," "," "," "," "," "," ") ,
+        Schedule("17:00"," " ," "," "," "," "," "," ")
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,7 +43,7 @@ class ScheduleFragment() : Fragment() {
     ): View? {
         val binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(requireContext())
-        binding.recSchedule.adapter = ScheduleAdapter()
+        binding.recSchedule.adapter = ScheduleAdapter(schedule)
 
         return binding.root
     }
