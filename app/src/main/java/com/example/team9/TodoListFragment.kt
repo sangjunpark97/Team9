@@ -12,7 +12,7 @@ class TodoListFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    }
+    }  //안건듬
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
