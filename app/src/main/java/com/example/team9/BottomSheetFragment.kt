@@ -29,7 +29,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         binding.timeBtn.setOnClickListener {
             val scheduleDialogFragment = ScheduleDialogFragment()
-            scheduleDialogFragment.show(childFragmentManager,"hello")
+            scheduleDialogFragment.show(childFragmentManager,"scheduleDiaFrag")
         }
         return binding.root
     }
