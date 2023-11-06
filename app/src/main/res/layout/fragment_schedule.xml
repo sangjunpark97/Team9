@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ScheduleFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Action_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="588dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="시간표 작성 화면 보여주기"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recSchedule"
         android:layout_width="match_parent"

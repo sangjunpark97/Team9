@@ -44,6 +44,11 @@ class ScheduleFragment() : Fragment() {
         val binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(requireContext())
         binding.recSchedule.adapter = ScheduleAdapter(schedule)
+
+        binding.ActionBtn.setOnClickListener{
+            val bottomSheetFragment = BottomSheetFragment()
+            bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
+        }
         return binding.root
     }
 
