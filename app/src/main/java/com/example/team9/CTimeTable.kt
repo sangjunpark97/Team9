@@ -1,27 +1,27 @@
 package com.example.team9
 
 data class CToDo(var what: String){
-    var deadline: String? = null
+    public var deadline: String? = null
 }
 
-data class Subject(val name: String) {
-    var type: String? = null
-    var credit: Int = -1
-    var grade: Int = -1
-    var day: String? = null
-    var place: String? = null
-    var startTime: String? = null
-    var endTime: String? = null
-    var memo: String? = null
+data class CSubject(val name: String) {
+    public var type: String? = null
+    public var credit: Int = -1
+    public var grade: Int = -1
+    public var day: String? = null
+    public var place: String? = null
+    public var startTime: String? = null
+    public var endTime: String? = null
+    public var memo: String? = null
 
-    val toDoList = mutableListOf<String>()
+    public val toDoList = mutableListOf<CToDo>()
 }
 
-class TimeTable {
-    val subjects = mutableListOf<Subject>()
+class CTimeTable {
+    val subjects = mutableListOf<CSubject>()
 
-    fun addSubject(name: String, day: String, place: String, startTime: String, endTime: String, memo: String? = null) {
-        val subject = Subject(name)
+    public fun addSubject(name: String, day: String? = null, place: String? = null, startTime: String? = null, endTime: String? = null, memo: String? = null) {
+        val subject = CSubject(name)
         subject.day = day
         subject.place = place
         subject.startTime = startTime
@@ -30,7 +30,7 @@ class TimeTable {
         subjects.add(subject)
     }
 
-    fun displayTimeTable() {
+    public fun displayTimeTable() {
         println("Timetable:")
         for (subject in subjects) {
             println("${subject.name}: ${subject.day}, ${subject.place}, ${subject.startTime} - ${subject.endTime}")
@@ -42,6 +42,7 @@ class TimeTable {
                 println("what? : ${toDoItem.what}")
                 if (toDoItem.deadline != null) {
                     println("deadline : ${toDoItem.deadline}")
+                }
             }
         }
     }
