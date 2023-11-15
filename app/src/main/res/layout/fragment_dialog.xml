@@ -95,34 +95,58 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/start_txt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="시작 시간"
                 android:textColor="#000000" />
 
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="startTime"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="time" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/finish_txt"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="종료 시간"
                 android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/editTextTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="endtime"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="time" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/Input_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="입력" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,18 +20,9 @@ class Schedule(val time:String, val mon: String, val tue: String, val wed: Strin
 
 class ScheduleFragment() : Fragment() {
 
-    val schedule = arrayOf(
-        Schedule(" ","월" ,"화","수","목","금","토","일") ,
-        Schedule("9:00"," " ," "," "," "," "," "," ") ,
-        Schedule("10:00"," " ," "," "," "," "," "," ") ,
-        Schedule("11:00"," " ," "," "," "," "," "," ") ,
-        Schedule("12:00"," " ," "," "," "," "," "," ") ,
-        Schedule("13:00"," " ," "," "," "," "," "," ") ,
-        Schedule("14:00"," " ," "," "," "," "," "," ") ,
-        Schedule("15:00"," " ," "," "," "," "," "," ") ,
-        Schedule("16:00"," " ," "," "," "," "," "," ") ,
-        Schedule("17:00"," " ," "," "," "," "," "," ")
-    )
+    val schedule: Array<String> = arrayOf("시간","월" ,"화","수","목","금","토","일")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,7 +34,7 @@ class ScheduleFragment() : Fragment() {
 
     ): View? {
         val binding = FragmentScheduleBinding.inflate(inflater, container, false)
-        binding.recSchedule.layoutManager = LinearLayoutManager(requireContext())
+        binding.recSchedule.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recSchedule.adapter = ScheduleAdapter(schedule)
 
         binding.ActionBtn.setOnClickListener{

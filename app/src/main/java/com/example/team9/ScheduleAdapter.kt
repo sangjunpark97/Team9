@@ -12,7 +12,7 @@ import com.example.team9.databinding.ScheduleItemBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
-class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
+class ScheduleAdapter(val schedule: Array<String>) : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -29,16 +29,21 @@ class ScheduleAdapter(val schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
 
 
       class Holder(private val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
-         fun bind(schedule: Schedule) {
-
-             binding.time.text = schedule.time
-             binding.mon.text = schedule.mon
-             binding.tue.text = schedule.tue
-             binding.wed.text = schedule.wed
-             binding.thu.text = schedule.thu
-             binding.fri.text = schedule.fri
-             binding.sat.text = schedule.sat
-             binding.sun.text = schedule.sun
+         fun bind(schedule: String) {
+             if(schedule=="시간") {
+                 binding.timeTable2.text = "9:00"
+                 binding.timeTable3.text = "10:00"
+                 binding.timeTable4.text = "11:00"
+                 binding.timeTable5.text = "12:00"
+                 binding.timeTable6.text = "13:00"
+                 binding.timeTable7.text = "14:00"
+                 binding.timeTable8.text = "15:00"
+                 binding.timeTable9.text = "16:00"
+                 binding.timeTable10.text = "17:00"
+             }
+             else {
+                 binding.timeTable1.text = schedule
+             }
 
 
              binding.root.setOnClickListener{

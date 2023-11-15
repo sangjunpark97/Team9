@@ -6,99 +6,112 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="10dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/mon"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/time"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable1"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="10dp" />
 
-    <TextView
-        android:id="@+id/tue"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/mon"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable2"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/wed"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/tue"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable3"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/thu"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/wed"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable4"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/fri"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/thu"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable5"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/sat"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/fri"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable6"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/sun"
-        android:layout_width="51dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:background="@drawable/border"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/sat"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/timeTable7"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeTable8"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeTable9"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timeTable10"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
