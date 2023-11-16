@@ -1,6 +1,7 @@
 package com.example.team9
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,36 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentBottomSheetBinding.inflate(inflater,container,false)
 
-        binding.timeBtn.setOnClickListener {
-            val scheduleDialogFragment = ScheduleDialogFragment()
-            scheduleDialogFragment.show(childFragmentManager,"scheduleDiaFrag")
+        binding.monBtn.setOnClickListener {
+            binding.monBtn.isSelected = !binding.monBtn.isSelected
         }
+        binding.tueBtn.setOnClickListener {
+            binding.tueBtn.isSelected = !binding.tueBtn.isSelected
+        }
+        binding.wedBtn.setOnClickListener {
+            binding.wedBtn.isSelected = !binding.wedBtn.isSelected
+        }
+        binding.thuBtn.setOnClickListener {
+            binding.thuBtn.isSelected = !binding.thuBtn.isSelected
+        }
+        binding.friBtn.setOnClickListener {
+            binding.friBtn.isSelected = !binding.friBtn.isSelected
+        }
+        binding.satBtn.setOnClickListener {
+            binding.satBtn.isSelected = !binding.satBtn.isSelected
+        }
+        binding.sunBtn.setOnClickListener {
+            binding.sunBtn.isSelected = !binding.sunBtn.isSelected
+        }
+
+        binding.InputBtn.setOnClickListener {
+            val totalText = "333"
+            val scheduleFragment = ScheduleFragment()
+
+
+            scheduleFragment.updateSchedule(3, totalText)
+        }
+
         return binding.root
     }
 
@@ -40,8 +67,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         fun newInstance(param1: String, param2: String) =
                 BottomSheetFragment().apply {
                     arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
+
                     }
                 }
     }
