@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navController)
 
         realTimeDatabaseTest()
+
+
+
+
+
         setContentView(binding.root)
     }
 
@@ -35,29 +40,29 @@ class MainActivity : AppCompatActivity() {
         val navController = binding.frgNav.getFragment<NavHostFragment>().navController
 
         return navController.navigateUp() || super.onSupportNavigateUp()
-     }
+    }
 
     private fun realTimeDatabaseTest() {
         val db = Firebase.database
         val uuid = UUID.randomUUID().toString()
-        val myRef = db.getReference("1")
+        val myRef = db.getReference("3")
         val testData = JWAData.appData(
             "",
             JWAData.Todo(
-                "",
-                "",
+                "어드벤쳐디자인",
+                "23년10월4일까지",
                 ""
             ),
-            "",
-            "",
-            "",
-            ""
+            "3시간",
+            "강의동204호",
+            "김형래교수님",
+            "발표준비잘할것"
         )
 
         myRef.child("subject").setValue(testData.subject)
         myRef.child("todo").push().setValue(
-            JWAData.Todo("아무거나", "2023-11-22","아무거나 메모")
-        )
+            testData.todo)
+
         myRef.child("classTime").setValue(testData.classTime)
         myRef.child("classRoom").setValue(testData.classRoom)
         myRef.child("teacher").setValue(testData.teacher)

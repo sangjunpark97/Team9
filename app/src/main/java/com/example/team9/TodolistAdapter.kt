@@ -9,7 +9,13 @@ import com.example.team9.databinding.TodoitemBinding
 
 class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀더패턴
     //뷰홀더패턴? 각 뷰 객체를 뷰 홀더에 보관하여 반복적인 메소드 호출을 줄여 속도를 개선하는 패턴
-    private val testArray: List<String> = listOf("객프과제","컴구발표","이산수학과제","알고리즘과제","ad발표","개발공부")
+    private var todoList: List<String> = emptyList()
+
+    fun setTodoList(list: List<String>) {
+        todoList = list
+        notifyDataSetChanged()
+    }
+    val testArray: List<String> = listOf("객프과제","컴구발표","이산수학과제","알고리즘과제","ad발표","개발공부")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodolistAdapter.Holder {
         return Holder(
             //홀더 객체를 생성  아이템 뷰를 인플레이트하고 홀더 객체 반환
@@ -22,10 +28,10 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀�
     //
 
     override fun onBindViewHolder(holder: TodolistAdapter.Holder, position: Int) {
-        holder.bind(testArray[position])    //테스트에레이에 position위치에있는 데이터를 홀더와 결합
+        holder.bind(todoList[position])    //테스트에레이에 position위치에있는 데이터를 홀더와 결합
     }
 
-    override fun getItemCount(): Int = testArray.size   //return testArray.size
+    override fun getItemCount(): Int = todoList.size   //return testArray.size
     //리사이클러 뷰에 표시할 아이템 개수
 
     class Holder(private val binding: TodoitemBinding) : //각 아이템뷰의 레이아웃 및 내용관리

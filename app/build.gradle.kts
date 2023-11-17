@@ -50,6 +50,11 @@ dependencies {
     implementation ("androidx.paging:paging-runtime:3.0.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
 
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.4.0")
+
     implementation("com.google.firebase:firebase-database:20.3.0")
 
     testImplementation("junit:junit:4.13.2")

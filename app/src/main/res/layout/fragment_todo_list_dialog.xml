@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextTodo" />
 
     <EditText
-        android:id="@+id/editTextTodo"
+        android:id="@+id/subject"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <EditText
+        android:id="@+id/duedate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -57,7 +58,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTodo" />
+        app:layout_constraintTop_toBottomOf="@+id/subject" />
 
 
     <Button
