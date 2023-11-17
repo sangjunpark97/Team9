@@ -8,6 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.team9.databinding.ActivityMainBinding
+import com.google.firebase.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.database
+import java.util.UUID
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -22,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.bottomNav.setupWithNavController(navController)
+
+        realTimeDatabaseTest()
         setContentView(binding.root)
     }
 
@@ -30,4 +36,35 @@ class MainActivity : AppCompatActivity() {
 
         return navController.navigateUp() || super.onSupportNavigateUp()
      }
+
+    private fun realTimeDatabaseTest() {
+        val db = Firebase.database
+        val uuid = UUID.randomUUID().toString()
+        val myRef = db.getReference("1")
+        val testData = JWAData.appData(
+            "",
+            JWAData.Todo(
+                "",
+                "",
+                ""
+            ),
+            "",
+            "",
+            "",
+            ""
+        )
+
+        myRef.child("subject").setValue(testData.subject)
+        myRef.child("todo").push().setValue(
+            JWAData.Todo("아무거나", "2023-11-22","아무거나 메모")
+        )
+        myRef.child("classTime").setValue(testData.classTime)
+        myRef.child("classRoom").setValue(testData.classRoom)
+        myRef.child("teacher").setValue(testData.teacher)
+        myRef.child("scheduleMemo").setValue(testData.scheduleMemo)
+    }
+
+    private fun writeValue(myRef: DatabaseReference, data: String) {
+        myRef.setValue(data)
+    }
 }

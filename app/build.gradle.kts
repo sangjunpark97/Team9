@@ -49,6 +49,7 @@ dependencies {
     implementation("androidx.gridlayout:gridlayout:1.0.0")
     implementation ("androidx.paging:paging-runtime:3.0.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
+
     implementation("com.google.firebase:firebase-database:20.3.0")
 
     testImplementation("junit:junit:4.13.2")
