@@ -21,7 +21,12 @@ class TodoListFragment : Fragment() {
         val binding = FragmentTodoListBinding.inflate(inflater, container, false)
         binding.recTodo.layoutManager = LinearLayoutManager(requireContext())
         binding.recTodo.adapter = TodolistAdapter()//리사이클러뷰의 아이디가 recTodo임 리사이클러뷰의 어댑터는 투두리스트어댑터
-
+        binding.todoBtn.setOnClickListener {
+            val todoListDialogFragment = TodoListDialogFragment()
+            todoListDialogFragment.show(childFragmentManager,"todolist")
+        }
         return binding.root
+
+
     }
 }

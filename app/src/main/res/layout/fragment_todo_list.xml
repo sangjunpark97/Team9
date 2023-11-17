@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".TodoListFragment" >
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/todo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="588dp"
+        android:clickable="true"
+        android:contentDescription="할일등록보여주기"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_todo"
         android:layout_width="match_parent"
@@ -16,4 +28,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
