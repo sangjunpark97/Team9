@@ -1,6 +1,8 @@
 package com.example.team9
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +23,9 @@ class Schedule(var text1:String, var text2: String, var text3: String, var text4
 
 class ScheduleFragment() : Fragment() {
     private lateinit var binding: FragmentScheduleBinding
-    var schedule = arrayOf(Schedule(" ","9:00" ,"10:00","11:00","12:00","13:00",
+
+
+    private var schedule = arrayOf(Schedule(" ","9:00" ,"10:00","11:00","12:00","13:00",
         "14:00","15:00","16:00","17:00"),
         Schedule("월"," " ," "," "," "," ", " "," "," "," "),
         Schedule("화"," " ," "," "," "," ", " "," "," "," "),
@@ -30,7 +34,7 @@ class ScheduleFragment() : Fragment() {
         Schedule("금"," " ," "," "," "," ", " "," "," "," "),
         Schedule("토"," " ," "," "," "," ", " "," "," "," "),
         Schedule("일"," " ," "," "," "," ", " "," "," "," ")
-        )
+    )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,23 +47,48 @@ class ScheduleFragment() : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
+
+
+
+
         binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recSchedule.adapter = ScheduleAdapter(schedule)
-
 
 
         binding.ActionBtn.setOnClickListener{
             val bottomSheetFragment = BottomSheetFragment()
             bottomSheetFragment.show(childFragmentManager, "bottomFrag")
         }
+
         return binding.root
     }
 
-    fun updateSchedule(position: Int, newText: String) {
-        schedule[position].text3 = newText
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateSchedule(newText: String, day: BooleanArray, startTime: String, endTime: String) {
+        // lectureTime = endTime.toInt() - startTime.toInt()
+        for(i in 0..6) {
+            if(day[i]) {
+                when(startTime) {
+                    "9:00" -> schedule[i+1].text2 = newText
+                    "10:00" -> schedule[i+1].text3 = newText
+                    "11:00" -> schedule[i+1].text4 = newText
+                    "12:00" -> schedule[i+1].text5 = newText
+                    "13:00" -> schedule[i+1].text6 = newText
+                    "14:00" -> schedule[i+1].text7 = newText
+                    "15:00" -> schedule[i+1].text8 = newText
+                    "16:00" -> schedule[i+1].text9 = newText
+                    "17:00" -> schedule[i+1].text10 = newText
+                }
+            }
+        }
+        Log.d("why","don't")
+        binding.recSchedule.adapter = ScheduleAdapter(schedule)
         binding.recSchedule.adapter?.notifyDataSetChanged()
+
+
     }
+
     companion object {
 
         @JvmStatic
