@@ -9,15 +9,15 @@
         android:icon="@drawable/baseline_donut_large_24"
         android:title="Timetable" />
     <item
-        android:id="@+id/todoListFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/baseline_checklist_24"
-        android:title="Todo" />
-    <item
         android:id="@+id/scheduleFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/baseline_today_24"
         android:title="Schedule" />
+    <item
+        android:id="@+id/todoListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_checklist_24"
+        android:title="Todo" />
 </menu>

@@ -46,6 +46,7 @@ class GradeFragment : Fragment() {
         viewModel.TimeTable.observe(viewLifecycleOwner) {
             it?.timeTable?.let { newTimeTables ->
                 timetablesAdapter?.updateData(newTimeTables)
+                timetablesAdapter?.notifyDataSetChanged()
             }
         }
     }

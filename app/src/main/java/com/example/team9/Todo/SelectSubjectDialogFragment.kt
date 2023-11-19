@@ -44,6 +44,7 @@ class SelectSubjectDialogFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         var idx :Int = viewModel.TimeTable.value?.nowIdx ?: 0
 
