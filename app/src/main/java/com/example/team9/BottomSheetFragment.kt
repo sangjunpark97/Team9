@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.team9.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -15,9 +16,8 @@ private const val ARG_PARAM2 = "param2"
 
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    val viewModel: TimeTableViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,21 +72,16 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             val scheduleFragment = parentFragment as? ScheduleFragment
             scheduleFragment?.updateSchedule(totalText, day, binding.startTime.text.toString(), binding.endTime.text.toString())
 
+            var idx : Int? = viewModel.TimeTable.value?.nowIdx
 
+            if (idx != null) {
+                viewModel.TimeTable.value?.timeTable?.get(idx)?.addSubject(binding.subName.text.toString())
+            }
+
+            dismiss()
 
         }
 
         return binding.root
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BottomSheetFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
     }
 }
