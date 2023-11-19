@@ -14,6 +14,8 @@ import com.example.team9.TimeTable.SubjectsAdapter
 import com.example.team9.TimeTable.TimetablesAdapter
 import com.example.team9.TimeTableViewModel
 import com.example.team9.databinding.FragmentGradeBinding
+import com.example.team9.databinding.FragmentSelectSubjectDialogBinding
+import com.example.team9.databinding.FragmentTodoListDialogBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +30,6 @@ private const val ARG_PARAM2 = "param2"
 class SelectSubjectDialogFragment : DialogFragment() {
 
     val viewModel: TimeTableViewModel by activityViewModels()
-    var binding : FragmentGradeBinding? = null
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.fragment_todo_list_dialog)
@@ -44,17 +45,19 @@ class SelectSubjectDialogFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // 이 프래그먼트를 위한 올바른 레이아웃을 인플레이트합니다.
+        val binding = FragmentSelectSubjectDialogBinding.inflate(inflater, container, false)
 
-        // Inflate the layout for this fragment
-        var idx :Int = viewModel.TimeTable.value?.nowIdx ?: 0
+        var idx: Int = viewModel.TimeTable.value?.nowIdx ?: 0
 
         var subjectsAdapter = SubjectsAdapter()
-        binding?.recTimetable?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.recTimetable?.adapter = subjectsAdapter
+        binding.recSubjects.layoutManager = LinearLayoutManager(requireContext())
+        binding.recSubjects.adapter = subjectsAdapter
 
         viewModel.TimeTable.value?.timeTable?.get(idx)?.let { subjectsAdapter.updateData(it.subjects) }
 
-        return inflater.inflate(R.layout.fragment_select_subject_dialog, container, false)
+        // 인플레이트된 바인딩의 루트 뷰를 반환합니다.
+        return binding.root
     }
 
 

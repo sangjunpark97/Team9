@@ -24,18 +24,18 @@ class TimeTableDialogFragment : DialogFragment() {
 
         return dialog
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = FragmentTimeTableDialogBinding.inflate(inflater, container, false)
 
         binding.btnOk.setOnClickListener {
-            var name :String = binding.editTTName.text.toString()
-            viewModel.TimeTable.value?.timeTable?.add(CTimeTable(name))
+            val name: String = binding.editTTName.text.toString()
+            val currentList = viewModel.TimeTable.value?.timeTable?.toMutableList() ?: mutableListOf()
+            currentList.add(CTimeTable(name))
 
+            viewModel.updateTimeTable(currentList)
             dismiss()
         }
 
