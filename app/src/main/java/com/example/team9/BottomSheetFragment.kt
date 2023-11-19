@@ -51,8 +51,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         binding.InputBtn.setOnClickListener {
-            val totalText = binding.subName.text.toString() +"\n장소:" + binding.location.text.toString() +"\n교수님: " +
-                    binding.proName.text.toString()
+            val totalText = binding.subName.text.toString() +"\n장소:" + binding.location.text.toString()
             val day = booleanArrayOf(false, false, false, false, false, false, false)
             if(binding.monBtn.isSelected)
                 day[0] = true
@@ -69,8 +68,34 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             if(binding.sunBtn.isSelected)
                 day[6] = true
 
+
+            val startTime: Int = when(binding.startTime.text.toString()) {
+                "9:00"  -> 9
+                "10:00" -> 10
+                "11:00" -> 11
+                "12:00" -> 12
+                "13:00" -> 13
+                "14:00" -> 14
+                "15:00" -> 15
+                "16:00" -> 16
+                "17:00" -> 17
+                else -> -1
+            }
+            val endTime: Int = when(binding.endTime.text.toString()) {
+                "10:00" -> 10
+                "11:00" -> 11
+                "12:00" -> 12
+                "13:00" -> 13
+                "14:00" -> 14
+                "15:00" -> 15
+                "16:00" -> 16
+                "17:00" -> 17
+                else -> -1
+            }
+
+
             val scheduleFragment = parentFragment as? ScheduleFragment
-            scheduleFragment?.updateSchedule(totalText, day, binding.startTime.text.toString(), binding.endTime.text.toString())
+            scheduleFragment?.updateSchedule(totalText, day, startTime, endTime)
 
             var idx : Int? = viewModel.TimeTable.value?.nowIdx
 

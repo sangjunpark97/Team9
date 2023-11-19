@@ -16,102 +16,102 @@
         <TextView
             android:id="@+id/timeTable1"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="10dp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable2"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable3"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable4"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable5"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable6"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable7"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable8"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable9"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
 
         <TextView
             android:id="@+id/timeTable10"
             android:layout_width="50dp"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="9dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

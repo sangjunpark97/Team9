@@ -11,10 +11,7 @@ import androidx.fragment.app.FragmentManager
 
 class ScheduleAdapter(var schedule: Array<Schedule>) : RecyclerView.Adapter<ScheduleAdapter.Holder>(){
 
-    fun updateData(newSchedule: Array<Schedule>) {
-        schedule = newSchedule
-        notifyDataSetChanged()
-    }
+
     fun getItem(position: Int): Schedule {
         return schedule[position]
     }
@@ -28,7 +25,6 @@ class ScheduleAdapter(var schedule: Array<Schedule>) : RecyclerView.Adapter<Sche
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
-        Log.d("sibal", "saki: $schedule")
         holder.bind(schedule[position])
 
     }
