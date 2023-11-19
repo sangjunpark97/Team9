@@ -30,9 +30,6 @@ class MainActivity : AppCompatActivity() {
         realTimeDatabaseTest()
 
 
-
-
-
         setContentView(binding.root)
     }
 

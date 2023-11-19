@@ -6,13 +6,13 @@
     app:startDestination="@id/gradeFragment">
     <fragment
         android:id="@+id/todoListFragment"
-        android:name="com.example.team9.TodoListFragment"
+        android:name="com.example.team9.Todo.TodoListFragment"
         android:label="TO-DO"
         tools:layout="@layout/fragment_todo_list" />
     <fragment
         android:id="@+id/gradeFragment"
-        android:name="com.example.team9.GradeFragment"
-        android:label="학점 계산기"
+        android:name="com.example.team9.TimeTable.GradeFragment"
+        android:label="시간표 목록"
         tools:layout="@layout/fragment_grade" />
     <fragment
         android:id="@+id/scheduleFragment"

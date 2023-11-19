@@ -55,6 +55,8 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata:2.4.0")
     implementation ("androidx.lifecycle:lifecycle-common-java8:2.4.0")
 
+    implementation ("androidx.activity:activity-ktx:1.6.1")
+
     implementation("com.google.firebase:firebase-database:20.3.0")
 
     testImplementation("junit:junit:4.13.2")

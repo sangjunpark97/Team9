@@ -1,7 +1,5 @@
-package com.example.team9
+package com.example.team9.Todo
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +14,7 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀�
         notifyDataSetChanged()
     }
     val testArray: List<String> = listOf("객프과제","컴구발표","이산수학과제","알고리즘과제","ad발표","개발공부")
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodolistAdapter.Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
             //홀더 객체를 생성  아이템 뷰를 인플레이트하고 홀더 객체 반환
             TodoitemBinding.inflate(LayoutInflater.from(parent.context), parent,false)
@@ -27,7 +25,7 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀�
     //레이아웃 매니저는 어댑터에 생성한 아이템뷰의 배치를 결정한다.
     //
 
-    override fun onBindViewHolder(holder: TodolistAdapter.Holder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(todoList[position])    //테스트에레이에 position위치에있는 데이터를 홀더와 결합
     }
 

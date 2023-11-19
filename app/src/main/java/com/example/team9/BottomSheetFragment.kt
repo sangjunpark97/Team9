@@ -1,23 +1,17 @@
 package com.example.team9
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.team9.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    val viewModel: TimeTableViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,38 +22,24 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentBottomSheetBinding.inflate(inflater,container,false)
 
-        binding.monBtn.setOnClickListener {
-            binding.monBtn.isSelected = !binding.monBtn.isSelected
-        }
-        binding.tueBtn.setOnClickListener {
-            binding.tueBtn.isSelected = !binding.tueBtn.isSelected
-        }
-        binding.wedBtn.setOnClickListener {
-            binding.wedBtn.isSelected = !binding.wedBtn.isSelected
-        }
-        binding.thuBtn.setOnClickListener {
-            binding.thuBtn.isSelected = !binding.thuBtn.isSelected
-        }
-        binding.friBtn.setOnClickListener {
-            binding.friBtn.isSelected = !binding.friBtn.isSelected
-        }
-        binding.satBtn.setOnClickListener {
-            binding.satBtn.isSelected = !binding.satBtn.isSelected
-        }
-        binding.sunBtn.setOnClickListener {
-            binding.sunBtn.isSelected = !binding.sunBtn.isSelected
-        }
 
         binding.InputBtn.setOnClickListener {
-            val totalText = "333"
-            val scheduleFragment = ScheduleFragment()
+            var name :String = binding.subName.text.toString()
+            var place :String = binding.location.text.toString()
+            var pro :String = binding.proName.text.toString()
 
+            var idx : Int? = viewModel.TimeTable.value?.nowIdx
 
-            scheduleFragment.updateSchedule(3, totalText)
+            if (idx != null) {
+                viewModel.TimeTable.value?.timeTable?.get(idx)?.addSubject(name)
+            }
+
+            dismiss()
         }
 
         return binding.root
     }
+
 
     companion object {
 

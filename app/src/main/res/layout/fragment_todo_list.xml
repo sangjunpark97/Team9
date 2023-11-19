@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TodoListFragment" >
+    tools:context=".Todo.TodoListFragment" >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/todo_btn"
