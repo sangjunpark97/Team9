@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.fragment.app.activityViewModels
 import com.example.team9.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -49,6 +51,23 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         binding.sunBtn.setOnClickListener {
             binding.sunBtn.isSelected = !binding.sunBtn.isSelected
         }
+
+        val colorGroup: RadioGroup = binding.colorGroup
+        var color: String = "White"
+        colorGroup.setOnCheckedChangeListener { _, checkedId ->
+            val selectedRadioButton: RadioButton = binding.root.findViewById(checkedId)
+            color = when(selectedRadioButton) {
+                binding.buttonRed -> "Red"
+                binding.buttonBlue -> "Blue"
+                binding.buttonBrown -> "Brown"
+                binding.buttonGray -> "Gray"
+                binding.buttonGreen -> "Green"
+                binding.buttonOrange -> "Orange"
+                binding.buttonPink -> "Pink"
+                else -> "White"
+            }
+        }
+
 
         binding.InputBtn.setOnClickListener {
             val totalText = binding.subName.text.toString() +"\n장소:" + binding.location.text.toString()
@@ -95,7 +114,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
 
             val scheduleFragment = parentFragment as? ScheduleFragment
-            scheduleFragment?.updateSchedule(totalText, day, startTime, endTime)
+            scheduleFragment?.updateSchedule(totalText, day, startTime, endTime, color)
 
             var idx : Int? = viewModel.TimeTable.value?.nowIdx
 

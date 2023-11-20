@@ -170,61 +170,71 @@
                 android:inputType="time" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/colorGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_red"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_marginLeft="20dp"
 
-            <Button
+                android:layout_weight="1"
+                android:background="@drawable/red_button" />
+
+            <RadioButton
                 android:id="@+id/button_pink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/pink_button" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                />
+                android:background="@drawable/green_button" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                 />
+                android:background="@drawable/gray_button" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_orange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                 />
+                android:background="@drawable/orange_button" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_brown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                 />
+                android:background="@drawable/brown_button" />
 
-            <Button
+            <RadioButton
                 android:id="@+id/button_blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                 />
+                android:background="@drawable/blue_button" />
 
 
-        </LinearLayout>
+        </RadioGroup>
 
         <Button
             android:id="@+id/Input_btn"
