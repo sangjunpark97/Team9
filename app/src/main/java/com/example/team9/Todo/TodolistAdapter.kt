@@ -3,16 +3,12 @@ package com.example.team9.Todo
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.team9.CSubject
+import com.example.team9.CToDo
+import com.example.team9.JWAData
 import com.example.team9.databinding.TodoitemBinding
 
-class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀더패턴
-    //뷰홀더패턴? 각 뷰 객체를 뷰 홀더에 보관하여 반복적인 메소드 호출을 줄여 속도를 개선하는 패턴
-    private var todoList: List<String> = emptyList()
-
-    fun setTodoList(list: List<String>) {
-        todoList = list
-        notifyDataSetChanged()
-    }
+class TodolistAdapter(private var todoList: MutableList<JWAData.Todo>): RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀더패턴
     val testArray: List<String> = listOf("객프과제","컴구발표","이산수학과제","알고리즘과제","ad발표","개발공부")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
@@ -26,7 +22,9 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀�
     //
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(todoList[position])    //테스트에레이에 position위치에있는 데이터를 홀더와 결합
+        holder.bind(todoList[position].todo!!)
+        holder.bindDeadline(todoList[position].deadline!!)
+        holder.bindSubName(todoList[position].subname!!)
     }
 
     override fun getItemCount(): Int = todoList.size   //return testArray.size
@@ -40,6 +38,13 @@ class TodolistAdapter: RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀�
             binding.checkBox.setOnCheckedChangeListener { check, notcheck ->  //메서드활용하여 체크박스 상태변화를 알아낸다
 
             }
+        }
+
+        fun bindSubName(item: String) {
+            binding.txtSubname.text = item
+        }
+        fun bindDeadline(item: String) {
+            binding.txtDeadline.text = item
         }
     }
 }

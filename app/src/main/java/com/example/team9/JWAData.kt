@@ -11,8 +11,8 @@ interface JWAData {
     )
 
     data class Todo(
-        val title: String?,
+        val subname: String?,
         val deadline: String?,
-        val todoMemo: String?
+        val todo: String?
     )
 }
