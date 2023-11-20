@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_grade" />
     <fragment
         android:id="@+id/scheduleFragment"
-        android:name="com.example.team9.ScheduleFragment"
+        android:name="com.example.team9.Schedule.ScheduleFragment"
         android:label="시간표"
         tools:layout="@layout/fragment_schedule" />
 </navigation>

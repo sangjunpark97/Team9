@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScheduleFragment">
+    tools:context=".Schedule.ScheduleFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Action_btn"

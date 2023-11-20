@@ -1,13 +1,13 @@
-package com.example.team9
+package com.example.team9.Schedule
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.activityViewModels
+import com.example.team9.TimeTableViewModel
 import com.example.team9.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

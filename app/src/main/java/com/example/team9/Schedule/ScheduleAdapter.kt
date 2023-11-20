@@ -1,16 +1,11 @@
-package com.example.team9
+package com.example.team9.Schedule
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.ScheduleItemBinding
-import androidx.fragment.app.FragmentManager
 
 class ScheduleAdapter(var schedule: Array<Schedule>, var color: Array<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
 

@@ -1,45 +1,36 @@
-package com.example.team9
+package com.example.team9.Schedule
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.FragmentScheduleBinding
-import com.example.team9.databinding.ScheduleItemBinding
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class Schedule(var text1: String, var text2: String, var text3: String, var text4: String, var text5:String, var text6: String,
-               var text7: String, var text8: String, var text9: String, var text10: String,)
-class Color(var text1_color: String, var text2_color: String, var text3_color: String, var text4_color: String, var text5_color: String,
-            var text6_color: String, var text7_color: String, var text8_color: String, var text9_color: String, var text10_color: String)
-private var schedule = arrayOf(Schedule(" ","9:00" ,"10:00","11:00","12:00","13:00",
+class Schedule(var text1: String, var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
+               , var text6: String = "", var text7: String = "", var text8: String = "", var text9: String = "", var text10: String = "")
+class Color(var text1_color: String = "White", var text2_color: String = "White", var text3_color: String = "White"
+            , var text4_color: String = "White", var text5_color: String = "White", var text6_color: String = "White"
+            , var text7_color: String = "White", var text8_color: String = "White", var text9_color: String = "White"
+            , var text10_color: String = "White")
+private var schedule = arrayOf(
+    Schedule(" ","9:00" ,"10:00","11:00","12:00","13:00",
     "14:00","15:00","16:00","17:00"),
-    Schedule("월"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("화"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("수"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("목"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("금"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("토"," " ," "," "," "," ", " "," "," "," "),
-    Schedule("일"," " ," "," "," "," ", " "," "," "," ")
+    Schedule("월"),
+    Schedule("화"),
+    Schedule("수"),
+    Schedule("목"),
+    Schedule("금"),
+    Schedule("토"),
+    Schedule("일")
 )
-private var color = arrayOf(Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"),
-    Color("White","White","White","White","White","White","White","White","White","White"))
+private var color = arrayOf(Color(), Color(),Color(), Color(),Color(), Color(),Color(), Color())
 
 class ScheduleFragment() : Fragment() {
     private lateinit var binding: FragmentScheduleBinding
