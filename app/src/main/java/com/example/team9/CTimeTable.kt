@@ -1,8 +1,6 @@
 package com.example.team9
 
-data class CToDo(var what: String){
-    public var deadline: String? = null
-}
+data class CToDo(var what: String, var deadline: String)
 
 data class CSubject(val name: String) {
     public var type: String? = null
@@ -14,7 +12,7 @@ data class CSubject(val name: String) {
     public var endTime: String? = null
     public var memo: String? = null
 
-    public val toDoList = mutableListOf<CToDo>()
+    public var toDoList = mutableListOf<CToDo>()
 }
 
 class CTimeTable(val name: String) {

@@ -20,4 +20,18 @@ class TimeTableViewModel : ViewModel() {
     init{
         //repository.observeTimeTable(_TimeTables)
     }
+
+    /////////////////////////////////좌님 꺼!!!! 건들지말것////////////////////////////////
+    private val _selectSubject = MutableLiveData(CSubject(""))
+    private val _selectTodo = MutableLiveData(CSubject(""))
+    var selectSubject: LiveData<CSubject> = _selectSubject
+    var selectTodo: LiveData<CSubject> = _selectTodo
+
+    fun selectSubject(subject: CSubject) {
+        _selectSubject.value = subject
+    }
+
+    fun selectTodo(todo: CSubject) {
+        _selectTodo.value = todo
+    }
 }

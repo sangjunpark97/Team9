@@ -2,6 +2,7 @@ package com.example.team9.Todo
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.team9.CSubject
 import com.example.team9.R
 import com.example.team9.TimeTable.SubjectsAdapter
 import com.example.team9.TimeTable.TimetablesAdapter
@@ -27,7 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SelectSubjectDialogFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SelectSubjectDialogFragment : DialogFragment() {
+class SelectSubjectDialogFragment : DialogFragment(), SubjectsAdapter.OnItemClickListener {
 
     val viewModel: TimeTableViewModel by activityViewModels()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -51,6 +53,7 @@ class SelectSubjectDialogFragment : DialogFragment() {
         var idx: Int = viewModel.TimeTable.value?.nowIdx ?: 0
 
         var subjectsAdapter = SubjectsAdapter()
+        subjectsAdapter.setOnItemClickListener(this)
         binding.recSubjects.layoutManager = LinearLayoutManager(requireContext())
         binding.recSubjects.adapter = subjectsAdapter
 
@@ -64,5 +67,11 @@ class SelectSubjectDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+    }
+
+    override fun onItemClick(itemValue: CSubject?) {
+        Log.d("좌", itemValue?.name!!)
+        viewModel.selectSubject(itemValue)
+        dismiss()
     }
 }
