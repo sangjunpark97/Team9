@@ -34,6 +34,7 @@ class TodoListFragment : Fragment() {
         }
 
         viewModel.selectTodo.observe(viewLifecycleOwner) {
+            //selectTodo의 변화를 감 it으로 받아와서
             if (it.name.isNotEmpty()) {
                 val todoData = mutableListOf<JWAData.Todo>()
                 for (i in it.toDoList) {

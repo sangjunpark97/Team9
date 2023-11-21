@@ -10,6 +10,7 @@ import com.example.team9.databinding.SubjectItemBinding
 
 
 class SubjectsAdapter(var subjects: MutableList<CSubject> = mutableListOf()) : RecyclerView.Adapter<SubjectsAdapter.Holder>() {
+    //리사이클러뷰
     interface OnItemClickListener {
         fun onItemClick(itemValue: CSubject?)
     }
@@ -17,7 +18,7 @@ class SubjectsAdapter(var subjects: MutableList<CSubject> = mutableListOf()) : R
     private var listener: OnItemClickListener? = null
 
     fun setOnItemClickListener(listener: OnItemClickListener?) {
-        this.listener = listener
+        this.listener = listener   //리스너 설정
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -46,8 +47,8 @@ class SubjectsAdapter(var subjects: MutableList<CSubject> = mutableListOf()) : R
         fun bindButton(subject: CSubject) {
             binding.checkBoxBtn.setOnClickListener {
                 if (listener != null) {
-//                    Log.d("좌","$name")
-                    // 인터페이스를 통해 값 전달
+//
+
                     listener?.onItemClick(subject)
                 }
             }

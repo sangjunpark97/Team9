@@ -64,6 +64,7 @@ class TodoListDialogFragment : DialogFragment() {
                 binding?.duedate?.text?.toString() ?: "")
             )
             selectSubject?.let { it1 -> viewModel.selectTodo(it1) }
+            //해당객체를 it1으로 받아와서 null이 아닌경우에만 실행
             dismiss()
         }
 
