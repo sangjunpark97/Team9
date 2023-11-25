@@ -36,25 +36,25 @@ class ScheduleAdapter(var line: Array<Line>, var color: Array<Color>) : Recycler
          fun bind(line: Line, color: Color) {
 
              binding.timeTable1.text = line.text1
-             binding.timeTable1.background = shape(getColorByColorName(color.text1_color))
+             binding.timeTable1.background = shape(getColorByColorName(color.text1Color))
              binding.timeTable2.text = line.text2
-             binding.timeTable2.background = shape(getColorByColorName(color.text2_color))
+             binding.timeTable2.background = shape(getColorByColorName(color.text2Color))
              binding.timeTable3.text = line.text3
-             binding.timeTable3.background = shape(getColorByColorName(color.text3_color))
+             binding.timeTable3.background = shape(getColorByColorName(color.text3Color))
              binding.timeTable4.text = line.text4
-             binding.timeTable4.background = shape(getColorByColorName(color.text4_color))
+             binding.timeTable4.background = shape(getColorByColorName(color.text4Color))
              binding.timeTable5.text = line.text5
-             binding.timeTable5.background = shape(getColorByColorName(color.text5_color))
+             binding.timeTable5.background = shape(getColorByColorName(color.text5Color))
              binding.timeTable6.text = line.text6
-             binding.timeTable6.background = shape(getColorByColorName(color.text6_color))
+             binding.timeTable6.background = shape(getColorByColorName(color.text6Color))
              binding.timeTable7.text = line.text7
-             binding.timeTable7.background = shape(getColorByColorName(color.text7_color))
+             binding.timeTable7.background = shape(getColorByColorName(color.text7Color))
              binding.timeTable8.text = line.text8
-             binding.timeTable8.background = shape(getColorByColorName(color.text8_color))
+             binding.timeTable8.background = shape(getColorByColorName(color.text8Color))
              binding.timeTable9.text = line.text9
-             binding.timeTable9.background = shape(getColorByColorName(color.text9_color))
+             binding.timeTable9.background = shape(getColorByColorName(color.text9Color))
              binding.timeTable10.text = line.text10
-             binding.timeTable10.background = shape(getColorByColorName(color.text10_color))
+             binding.timeTable10.background = shape(getColorByColorName(color.text10Color))
 
 
 
