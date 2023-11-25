@@ -13,22 +13,22 @@ import com.example.team9.databinding.FragmentScheduleBinding
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class Schedule(var text1: String, var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
-               , var text6: String = "", var text7: String = "", var text8: String = "", var text9: String = "", var text10: String = "")
-class Color(var text1_color: String = "White", var text2_color: String = "White", var text3_color: String = "White"
-            , var text4_color: String = "White", var text5_color: String = "White", var text6_color: String = "White"
-            , var text7_color: String = "White", var text8_color: String = "White", var text9_color: String = "White"
-            , var text10_color: String = "White")
-private var schedule = arrayOf(
-    Schedule(" ","9:00" ,"10:00","11:00","12:00","13:00",
+class Line(val text1: String, var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
+           , var text6: String = "", var text7: String = "", var text8: String = "", var text9: String = "", var text10: String = "")
+class Color(val text1Color: String = "White", var text2Color: String = "White", var text3Color: String = "White"
+            , var text4Color: String = "White", var text5Color: String = "White", var text6Color: String = "White"
+            , var text7Color: String = "White", var text8Color: String = "White", var text9Color: String = "White"
+            , var text10Color: String = "White")
+private var lines = arrayOf(
+    Line(" ","9:00" ,"10:00","11:00","12:00","13:00",
     "14:00","15:00","16:00","17:00"),
-    Schedule("월"),
-    Schedule("화"),
-    Schedule("수"),
-    Schedule("목"),
-    Schedule("금"),
-    Schedule("토"),
-    Schedule("일")
+    Line("월"),
+    Line("화"),
+    Line("수"),
+    Line("목"),
+    Line("금"),
+    Line("토"),
+    Line("일")
 )
 private var color = arrayOf(Color(), Color(),Color(), Color(),Color(), Color(),Color(), Color())
 
@@ -50,7 +50,7 @@ class ScheduleFragment() : Fragment() {
 
         binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.recSchedule.adapter = ScheduleAdapter(schedule, color)
+        binding.recSchedule.adapter = ScheduleAdapter(lines, color)
 
 
         binding.ActionBtn.setOnClickListener{
@@ -69,47 +69,47 @@ class ScheduleFragment() : Fragment() {
                 for (time in startTime until endTime) {
                     when (time) {
                         9 -> {
-                            schedule[i + 1].text2 = newText
-                            color[i + 1].text2_color = Color
+                            lines[i + 1].text2 = newText
+                            color[i + 1].text2Color = Color
                         }
                         10 -> {
-                            schedule[i + 1].text3 = newText
-                            color[i + 1].text3_color = Color
+                            lines[i + 1].text3 = newText
+                            color[i + 1].text3Color = Color
                         }
                         11 -> {
-                            schedule[i + 1].text4 = newText
-                            color[i + 1].text4_color = Color
+                            lines[i + 1].text4 = newText
+                            color[i + 1].text4Color = Color
                         }
                         12 -> {
-                            schedule[i + 1].text5 = newText
-                            color[i + 1].text5_color = Color
+                            lines[i + 1].text5 = newText
+                            color[i + 1].text5Color = Color
                         }
                         13 -> {
-                            schedule[i + 1].text6 = newText
-                            color[i + 1].text6_color = Color
+                            lines[i + 1].text6 = newText
+                            color[i + 1].text6Color = Color
                         }
                         14 -> {
-                            schedule[i + 1].text7 = newText
-                            color[i + 1].text7_color = Color
+                            lines[i + 1].text7 = newText
+                            color[i + 1].text7Color = Color
                         }
                         15 -> {
-                            schedule[i + 1].text8 = newText
-                            color[i + 1].text8_color = Color
+                            lines[i + 1].text8 = newText
+                            color[i + 1].text8Color = Color
                         }
                         16 -> {
-                            schedule[i + 1].text9 = newText
-                            color[i + 1].text9_color = Color
+                            lines[i + 1].text9 = newText
+                            color[i + 1].text9Color = Color
                         }
                         17 -> {
-                            schedule[i + 1].text10 = newText
-                            color[i + 1].text10_color = Color
+                            lines[i + 1].text10 = newText
+                            color[i + 1].text10Color = Color
                         }
                     }
 
                 }
             }
         }
-        binding.recSchedule.adapter = ScheduleAdapter(schedule, color)
+        binding.recSchedule.adapter = ScheduleAdapter(lines, color)
         binding.recSchedule.adapter?.notifyDataSetChanged()
 
 

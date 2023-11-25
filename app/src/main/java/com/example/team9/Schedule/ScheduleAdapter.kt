@@ -7,23 +7,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.ScheduleItemBinding
 
-class ScheduleAdapter(var schedule: Array<Schedule>, var color: Array<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
+class ScheduleAdapter(var line: Array<Line>, var color: Array<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
 
 
-    fun getItem(position: Int): Schedule {
-        return schedule[position]
+    fun getItem(position: Int): Line {
+        return line[position]
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder<Any?> {
         val binding = ScheduleItemBinding.inflate(LayoutInflater.from(parent.context))
         return Holder(binding)
     }
 
-    override fun getItemCount(): Int = schedule.size
+    override fun getItemCount(): Int = line.size
 
 
     override fun onBindViewHolder(holder: Holder<Any?>, position: Int) {
 
-        holder.bind(schedule[position], color[position])
+        holder.bind(line[position], color[position])
 
     }
 
@@ -33,27 +33,27 @@ class ScheduleAdapter(var schedule: Array<Schedule>, var color: Array<Color>) : 
 
       class Holder<Drawable>(val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-         fun bind(schedule: Schedule, color: Color) {
+         fun bind(line: Line, color: Color) {
 
-             binding.timeTable1.text = schedule.text1
+             binding.timeTable1.text = line.text1
              binding.timeTable1.background = shape(getColorByColorName(color.text1_color))
-             binding.timeTable2.text = schedule.text2
+             binding.timeTable2.text = line.text2
              binding.timeTable2.background = shape(getColorByColorName(color.text2_color))
-             binding.timeTable3.text = schedule.text3
+             binding.timeTable3.text = line.text3
              binding.timeTable3.background = shape(getColorByColorName(color.text3_color))
-             binding.timeTable4.text = schedule.text4
+             binding.timeTable4.text = line.text4
              binding.timeTable4.background = shape(getColorByColorName(color.text4_color))
-             binding.timeTable5.text = schedule.text5
+             binding.timeTable5.text = line.text5
              binding.timeTable5.background = shape(getColorByColorName(color.text5_color))
-             binding.timeTable6.text = schedule.text6
+             binding.timeTable6.text = line.text6
              binding.timeTable6.background = shape(getColorByColorName(color.text6_color))
-             binding.timeTable7.text = schedule.text7
+             binding.timeTable7.text = line.text7
              binding.timeTable7.background = shape(getColorByColorName(color.text7_color))
-             binding.timeTable8.text = schedule.text8
+             binding.timeTable8.text = line.text8
              binding.timeTable8.background = shape(getColorByColorName(color.text8_color))
-             binding.timeTable9.text = schedule.text9
+             binding.timeTable9.text = line.text9
              binding.timeTable9.background = shape(getColorByColorName(color.text9_color))
-             binding.timeTable10.text = schedule.text10
+             binding.timeTable10.text = line.text10
              binding.timeTable10.background = shape(getColorByColorName(color.text10_color))
 
 
@@ -91,7 +91,7 @@ class ScheduleAdapter(var schedule: Array<Schedule>, var color: Array<Color>) : 
                   "Orange" -> android.graphics.Color.parseColor("#FFA778")
                   "Pink" -> android.graphics.Color.parseColor("#FFACB7")
 
-                  else -> android.graphics.Color.parseColor("#FFF0F0")
+                  else -> android.graphics.Color.parseColor("#FFFFFF")
               }
           }
 
