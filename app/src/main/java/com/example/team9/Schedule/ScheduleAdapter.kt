@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.ScheduleItemBinding
 
-class ScheduleAdapter(var line: Array<Line>, var color: Array<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
+class ScheduleAdapter(var line: List<Line>, var color: Array<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
 
 
     fun getItem(position: Int): Line {

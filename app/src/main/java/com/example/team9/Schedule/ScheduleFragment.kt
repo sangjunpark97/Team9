@@ -8,18 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.team9.databinding.FragmentScheduleBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class Line(val text1: String, var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
+data class Line(val text1: String, var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
            , var text6: String = "", var text7: String = "", var text8: String = "", var text9: String = "", var text10: String = "")
-class Color(val text1Color: String = "White", var text2Color: String = "White", var text3Color: String = "White"
+data class Color(val text1Color: String = "White", var text2Color: String = "White", var text3Color: String = "White"
             , var text4Color: String = "White", var text5Color: String = "White", var text6Color: String = "White"
             , var text7Color: String = "White", var text8Color: String = "White", var text9Color: String = "White"
             , var text10Color: String = "White")
-private var lines = arrayOf(
+var lines = listOf(
     Line(" ","9:00" ,"10:00","11:00","12:00","13:00",
     "14:00","15:00","16:00","17:00"),
     Line("월"),
@@ -30,7 +32,7 @@ private var lines = arrayOf(
     Line("토"),
     Line("일")
 )
-private var color = arrayOf(Color(), Color(),Color(), Color(),Color(), Color(),Color(), Color())
+var color = arrayOf(Color(), Color(),Color(), Color(),Color(), Color(),Color(), Color())
 
 class ScheduleFragment() : Fragment() {
     private lateinit var binding: FragmentScheduleBinding
@@ -110,6 +112,10 @@ class ScheduleFragment() : Fragment() {
             }
         }
         binding.recSchedule.adapter = ScheduleAdapter(lines, color)
+        val database = Firebase.database
+        val myRef = database.getReference("시간표")
+
+        myRef.setValue(lines)
         binding.recSchedule.adapter?.notifyDataSetChanged()
 
 
