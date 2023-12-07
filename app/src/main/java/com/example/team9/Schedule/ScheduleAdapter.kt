@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.team9.databinding.ScheduleItemBinding
 
-class ScheduleAdapter(var line: List<Line>, var color: List<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
-
-
+class ScheduleAdapter(val line: List<Line>, val color: List<Color>) : RecyclerView.Adapter<ScheduleAdapter.Holder<Any?>>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder<Any?> {
         val binding = ScheduleItemBinding.inflate(LayoutInflater.from(parent.context))
@@ -18,16 +16,11 @@ class ScheduleAdapter(var line: List<Line>, var color: List<Color>) : RecyclerVi
 
     override fun getItemCount(): Int = line.size
 
-
     override fun onBindViewHolder(holder: Holder<Any?>, position: Int) {
 
         holder.bind(line[position], color[position])
 
     }
-
-
-
-
 
     class Holder<Drawable>(val binding: ScheduleItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -54,21 +47,12 @@ class ScheduleAdapter(var line: List<Line>, var color: List<Color>) : RecyclerVi
             binding.timeTable10.text = line.text10
             binding.timeTable10.background = shape(getColorByColorName(color.text10Color))
 
-
-
-
-
-
-            binding.root.setOnClickListener{
-
-
-            }
         }
 
         private fun shape(colorByColorName: Int): GradientDrawable {
             val shape = GradientDrawable()
             shape.shape = GradientDrawable.RECTANGLE
-            shape.setStroke(1, android.graphics.Color.parseColor("#000000"))
+            shape.setStroke(1, android.graphics.Color.parseColor("#000000")) // 테두리
             shape.setColor(colorByColorName) // 배경색
             return shape
         }
@@ -82,16 +66,8 @@ class ScheduleAdapter(var line: List<Line>, var color: List<Color>) : RecyclerVi
                 "Green" -> android.graphics.Color.parseColor("#329632")
                 "Orange" -> android.graphics.Color.parseColor("#FFA778")
                 "Pink" -> android.graphics.Color.parseColor("#FFACB7")
-
                 else -> android.graphics.Color.parseColor("#FFFFFF")
             }
         }
-
-
     }
-
-
-
-
-
 }

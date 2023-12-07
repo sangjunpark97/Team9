@@ -2,7 +2,6 @@ package com.example.team9.Schedule
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,17 +26,14 @@ data class Color(val text1Color: String = "White", val text2Color: String = "Whi
                  , val text4Color: String = "White", val text5Color: String = "White", val text6Color: String = "White"
                  , val text7Color: String = "White", val text8Color: String = "White", val text9Color: String = "White"
                  , val text10Color: String = "White")
-var lines = ArrayList<Line>()
+var line = ArrayList<Line>()
 var color = ArrayList<Color>()
 
 class ScheduleFragment() : Fragment() {
     private lateinit var binding: FragmentScheduleBinding
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -51,21 +47,19 @@ class ScheduleFragment() : Fragment() {
         binding = FragmentScheduleBinding.inflate(inflater, container, false)
         binding.recSchedule.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                lines.clear()
+                line.clear()
                 color.clear()
-
                 for (i in 0 until 8) {
                     val textSnapshot = dataSnapshot.child("text").child(i.toString())
                     val colorSnapshot = dataSnapshot.child("color").child(i.toString())
 
-                    val line = textSnapshot.getValue<Line>()
+                    val lineItem = textSnapshot.getValue<Line>()
                     val colorItem = colorSnapshot.getValue<Color>()
 
-                    if (line != null) {
-                        lines.add(line)
+                    if (lineItem != null) {
+                        com.example.team9.Schedule.line.add(lineItem)
                     }
 
                     if (colorItem != null) {
@@ -73,15 +67,14 @@ class ScheduleFragment() : Fragment() {
                     }
                 }
 
-                binding.recSchedule.adapter = ScheduleAdapter(lines, color)
+                binding.recSchedule.adapter = ScheduleAdapter(line, color)
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.w("Firebase", "Failed to read value for 시간표.", error.toException())
+
             }
+
         })
-
-
 
 
         binding.ActionBtn.setOnClickListener{
@@ -111,17 +104,9 @@ class ScheduleFragment() : Fragment() {
                 }
             }
         }
-        binding.recSchedule.adapter = ScheduleAdapter(lines, color)
+        binding.recSchedule.adapter = ScheduleAdapter(line, color)
         binding.recSchedule.adapter?.notifyDataSetChanged()
+
     }
 
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleFragment().apply {
-
-            }
-    }
 }
