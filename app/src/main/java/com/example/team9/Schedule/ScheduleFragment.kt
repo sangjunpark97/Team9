@@ -21,12 +21,12 @@ import com.google.firebase.ktx.Firebase
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-data class Line(var text1: String = "", var text2: String = "", var text3: String = "", var text4: String = "", var text5:String = ""
-                , var text6: String = "", var text7: String = "", var text8: String = "", var text9: String = "", var text10: String = "")
-data class Color(var text1Color: String = "White", var text2Color: String = "White", var text3Color: String = "White"
-                 , var text4Color: String = "White", var text5Color: String = "White", var text6Color: String = "White"
-                 , var text7Color: String = "White", var text8Color: String = "White", var text9Color: String = "White"
-                 , var text10Color: String = "White")
+data class Line(val text1: String = "", val text2: String = "", val text3: String = "", val text4: String = "", val text5:String = ""
+                , val text6: String = "", val text7: String = "", val text8: String = "", val text9: String = "", val text10: String = "")
+data class Color(val text1Color: String = "White", val text2Color: String = "White", val text3Color: String = "White"
+                 , val text4Color: String = "White", val text5Color: String = "White", val text6Color: String = "White"
+                 , val text7Color: String = "White", val text8Color: String = "White", val text9Color: String = "White"
+                 , val text10Color: String = "White")
 var lines = ArrayList<Line>()
 var color = ArrayList<Color>()
 
@@ -94,7 +94,6 @@ class ScheduleFragment() : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateSchedule(newText: String, day: BooleanArray, startTime: Int, endTime: Int, Color: String) {
-        val lectureTime = endTime - startTime
         val database = Firebase.database
         val myRef = database.getReference("시간표")
 
@@ -105,10 +104,10 @@ class ScheduleFragment() : Fragment() {
                     val colorKey = "text${time - 7}Color" // 예: "text2Color", "text3Color", ...
 
                     // lines에 데이터 설정
-                    myRef.child("text").child(i.toString()).child(textKey).setValue(newText)
+                    myRef.child("text").child((i+1).toString()).child(textKey).setValue(newText)
 
                     // color에 데이터 설정
-                    myRef.child("color").child(i.toString()).child(colorKey).setValue(Color)
+                    myRef.child("color").child((i+1).toString()).child(colorKey).setValue(Color)
                 }
             }
         }

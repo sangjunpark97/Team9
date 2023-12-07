@@ -61,13 +61,7 @@ class ScheduleAdapter(var line: List<Line>, var color: List<Color>) : RecyclerVi
 
             binding.root.setOnClickListener{
 
-                val builder = AlertDialog.Builder(binding.root.context)
-                builder.setMessage("to do list 연동")
-                builder.setPositiveButton("확인") { dialog, _ ->
-                    dialog.dismiss()
-                }
-                val dialog = builder.create()
-                dialog.show()
+
             }
         }
 
