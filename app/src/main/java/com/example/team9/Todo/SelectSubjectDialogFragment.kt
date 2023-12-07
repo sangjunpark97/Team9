@@ -19,16 +19,7 @@ import com.example.team9.databinding.FragmentGradeBinding
 import com.example.team9.databinding.FragmentSelectSubjectDialogBinding
 import com.example.team9.databinding.FragmentTodoListDialogBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SelectSubjectDialogFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SelectSubjectDialogFragment : DialogFragment(), SubjectsAdapter.OnItemClickListener {
 
     val viewModel: TimeTableViewModel by activityViewModels()
@@ -50,7 +41,7 @@ class SelectSubjectDialogFragment : DialogFragment(), SubjectsAdapter.OnItemClic
         // 이 프래그먼트를 위한 올바른 레이아웃을 인플레이트합니다.
         val binding = FragmentSelectSubjectDialogBinding.inflate(inflater, container, false)
 
-        var idx: Int = viewModel.TimeTable.value?.nowIdx ?: 0
+        var idx: Int = viewModel.TimeTable.value?.nowIdx ?: 0   //선택된 시간표의 인덱스 가져올라고
 
         var subjectsAdapter = SubjectsAdapter()
         subjectsAdapter.setOnItemClickListener(this)
@@ -70,8 +61,10 @@ class SelectSubjectDialogFragment : DialogFragment(), SubjectsAdapter.OnItemClic
     }
 
     override fun onItemClick(itemValue: CSubject?) {
-        Log.d("좌", itemValue?.name!!)
-        viewModel.selectSubject(itemValue)
-        dismiss()
+        itemValue?.let {
+            Log.d("좌", it.name ?: "Name is null") //
+            viewModel.selectSubject(it)
+            dismiss()
+        }
     }
 }

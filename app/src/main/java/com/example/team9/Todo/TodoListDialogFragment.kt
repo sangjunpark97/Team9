@@ -10,14 +10,15 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.team9.CSubject
+import com.example.team9.CTimeTable
 import com.example.team9.CToDo
+import com.example.team9.JWAData
 import com.example.team9.R
 import com.example.team9.TimeTableViewModel
 import com.example.team9.databinding.FragmentTodoListDialogBinding
+import com.google.firebase.database.FirebaseDatabase
 
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class TodoListDialogFragment : DialogFragment() {
@@ -48,7 +49,7 @@ class TodoListDialogFragment : DialogFragment() {
         }
 
         viewModel.selectSubject.observe(this, Observer {
-            if (it != CSubject("")) {
+            if (it != CSubject("")) {  //비어있지않으면
                 selectSubject = it
                 binding?.editTextText?.setText(selectSubject?.name)
             }
@@ -59,6 +60,7 @@ class TodoListDialogFragment : DialogFragment() {
         }
 
         binding?.buttonAdd?.setOnClickListener {
+            writeDataToFirebase()
             selectSubject?.toDoList?.add(
                 CToDo(binding?.TextTodo?.text.toString(),
                 binding?.duedate?.text?.toString() ?: "")
@@ -67,10 +69,24 @@ class TodoListDialogFragment : DialogFragment() {
             //해당객체를 it1으로 받아와서 null이 아닌경우에만 실행
             dismiss()
         }
-
         binding?.buttonCancel?.setOnClickListener {
+
             dismiss()
         }
         return binding?.root
+    }
+
+    private fun writeDataToFirebase() {
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("todos")
+        // Firebase에 데이터 쓰기
+        val todoData = JWAData.Todo(
+            selectSubject?.name,
+            binding?.duedate?.text?.toString() ?: "",
+            binding?.TextTodo?.text.toString()
+        )
+
+        // 쓰기 작업
+        myRef.child(selectSubject?.name ?: "").push().setValue(todoData)
     }
 }
