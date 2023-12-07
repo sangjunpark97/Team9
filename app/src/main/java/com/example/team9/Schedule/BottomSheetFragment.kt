@@ -11,11 +11,6 @@ import com.example.team9.TimeTableViewModel
 import com.example.team9.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
 
@@ -70,7 +65,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
 
         binding.InputBtn.setOnClickListener {
-            val totalText = binding.subName.text.toString() +"\n장소:" + binding.location.text.toString()
+            val totalText = binding.subName.text.toString() +"\n\n" + binding.location.text.toString()
             val day = booleanArrayOf(false, false, false, false, false, false, false)
             if(binding.monBtn.isSelected)
                 day[0] = true
@@ -121,6 +116,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             if (idx != null) {
                 viewModel.TimeTable.value?.timeTable?.get(idx)?.addSubject(binding.subName.text.toString())
             }
+
 
             dismiss()
 
