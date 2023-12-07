@@ -20,7 +20,7 @@ class TimeTableViewModel : ViewModel() {  //뷰모델 상속
 
     /////////////////////////////////좌꺼 건들지말것////////////////////////////////
     //
-    //라이브 데이터는 옵저버패턴을 사용하기 때문에, 데이터의 변화를 실시간으로 구독자에게 통지할 수 있다
+    //라이브 데이터는 옵저버패턴을 사용하기 때문에, 데이터의 변화를 실시간으로 사용자에게 통지할 수 있다
     private val _selectSubject = MutableLiveData(CSubject(""))
     private val _selectTodo = MutableLiveData(CSubject(""))
     var selectSubject: LiveData<CSubject> = _selectSubject

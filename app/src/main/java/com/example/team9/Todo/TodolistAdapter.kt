@@ -45,10 +45,10 @@ class TodolistAdapter(private var todoList: MutableList<JWAData.Todo>): Recycler
             }
         }
 
-        fun bindSubName(item: String) {
+        fun bindSubName(item: String) {  //과목이름
             binding.txtSubname.text = item
         }
-        fun bindDeadline(item: String) {
+        fun bindDeadline(item: String) { //제출기한
             binding.txtDeadline.text = item
         }
     }
