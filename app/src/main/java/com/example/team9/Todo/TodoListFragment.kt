@@ -31,11 +31,14 @@ class TodoListFragment : Fragment() {
         binding.todoBtn.setOnClickListener {
             val todoListDialogFragment = TodoListDialogFragment()
             todoListDialogFragment.show(childFragmentManager, "todolist")
+            //버튼 누르면 다이얼로그프래그먼트 띄움(입력하는)
         }
 
         viewModel.selectTodo.observe(viewLifecycleOwner) {
-            //selectTodo의 변화를 감 it으로 받아와서
-            if (it.name.isNotEmpty()) {
+            //뷰모델 셀렉트투두의 변화감지 //
+
+            //Csubject받아서 그 내용들을 좌데이터에 저장했음
+            if (it.name.isNotEmpty()) {//
                 val todoData = mutableListOf<JWAData.Todo>()
                 for (i in it.toDoList) {
                     todoData.add(JWAData.Todo(it.name, i.deadline, i.what))

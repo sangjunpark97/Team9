@@ -80,7 +80,7 @@ class TodoListDialogFragment : DialogFragment() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("todos")
         // Firebase에 데이터 쓰기
-        val todoData = JWAData.Todo(
+        val todoData = JWAData.Todo(   //다이얼로그 프래그먼트에서도 CTimeTable 구조 쓰려했으나 실패
             selectSubject?.name,
             binding?.duedate?.text?.toString() ?: "",
             binding?.TextTodo?.text.toString()

@@ -11,6 +11,7 @@ import com.example.team9.databinding.SubjectItemBinding
 
 class SubjectsAdapter(var subjects: MutableList<CSubject> = mutableListOf()) : RecyclerView.Adapter<SubjectsAdapter.Holder>() {
     //리사이클러뷰
+    //과목목록을 리사이클러뷰에 표시하기위한
     interface OnItemClickListener {
         fun onItemClick(itemValue: CSubject?)
     }

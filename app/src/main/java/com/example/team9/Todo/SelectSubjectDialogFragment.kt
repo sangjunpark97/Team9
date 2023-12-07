@@ -50,7 +50,7 @@ class SelectSubjectDialogFragment : DialogFragment(), SubjectsAdapter.OnItemClic
 
         viewModel.TimeTable.value?.timeTable?.get(idx)?.let { subjectsAdapter.updateData(it.subjects) }
 
-        // 인플레이트된 바인딩의 루트 뷰를 반환합니다.
+        // 인플레이트된 바인딩의 루트 뷰를 반환한다
         return binding.root
     }
 
