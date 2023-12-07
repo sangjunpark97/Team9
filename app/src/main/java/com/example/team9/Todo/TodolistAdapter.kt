@@ -8,8 +8,12 @@ import com.example.team9.CToDo
 import com.example.team9.JWAData
 import com.example.team9.databinding.TodoitemBinding
 
+
+
+
+
 class TodolistAdapter(private var todoList: MutableList<JWAData.Todo>): RecyclerView.Adapter<TodolistAdapter.Holder>(){//뷰홀더패턴
-    val testArray: List<String> = listOf("객프과제","컴구발표","이산수학과제","알고리즘과제","ad발표","개발공부")
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         return Holder(
             //홀더 객체를 생성  아이템 뷰를 인플레이트하고 홀더 객체 반환
@@ -19,7 +23,8 @@ class TodolistAdapter(private var todoList: MutableList<JWAData.Todo>): Recycler
     //어댑터는 아이템뷰를 생성하고 데이터를 바인딩해준다.
     //바인딩은 아이템뷰에 알맞는 데이터순서대로 넣어주는 것을 말한다.
     //레이아웃 매니저는 어댑터에 생성한 아이템뷰의 배치를 결정한다.
-    //
+    //리사이클러뷰는 뷰홀더 패턴 사용
+    //뷰홀더 패턴이란
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(todoList[position].todo!!)

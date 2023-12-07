@@ -48,7 +48,6 @@ class SubjectsAdapter(var subjects: MutableList<CSubject> = mutableListOf()) : R
             binding.checkBoxBtn.setOnClickListener {
                 if (listener != null) {
 //
-
                     listener?.onItemClick(subject)
                 }
             }
